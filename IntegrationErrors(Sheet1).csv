@@ -1,0 +1,63 @@
+Integration Name,Integration Owner(s),Status,Error Message,Explanation
+INT412-CreateJobRequisition-SI-I,Pujitha Paladugu,Critical, Unexpected character ' ' (code 32) (missing name?)  at [row col {unknown-source}]: [58 108],&' in the Company Ref ID
+INT412-CreateJobRequisition-SI-I,Pujitha Paladugu,Critical,Validation error occurred. Supervisory Organization is not active now or in the future.,Supervisory Organization is not active now or in the future.
+INT412-CreateJobRequisition-SI-I,Pujitha Paladugu,Critical,Validation error occurred. The Work Shift specified is not valid for the Location.,The Work Shift specified is not valid for the Location.
+INT420 - Create Supervisory Org - SI - B,Joydeepta Kar,Error,"Integration Failed.  com.capeclear.mediation.MediationException: application=Create_Supervisory - Workday Out transport id=WorkdayOutSoap0 encountered problem sending to endpoint 'https://wd5-services1.myworkday.com/ccx/service/thermofisher/Staffing/25.2' with operation 'Assign_Organization_Roles_Request'. Details: MSG_SENSITIVE:0f0ea66b-fe02-49f0-808d-f782739f962b application=Create_Supervisory - Code: SOAP-ENV:Server.processingError, Reason: Processing error occurred. The task submitted is not authorized. Root Cause: BadRequestException : 
+Error code : unknown
+Response :<SOAP-ENV:Envelope xmlns:SOAP-ENV=""http://schemas.xmlsoap.org/soap/envelope/"">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault xmlns:wd=""urn:com.workday/bsvc"">
+<faultcode>SOAP-ENV:Server.processingError</faultcode>
+<faultstring>Processing error occurred. The task submitted is not authorized.</faultstring>
+<detail>
+<wd:Processing_Fault>
+<wd:Detail_Message>The task submitted is not authorized.</wd:Detail_Message>
+</wd:Processing_Fault>
+</detail>
+</SOAP-ENV:Fault>
+</SOAP-ENV:Body>. See the consolidated report for further details",Retired web service(Assign Organization Roles) was used in the Integration
+INT420 - Create Supervisory Org - SI - B,Joydeepta Kar,Error,"Integration Failed.  com.capeclear.mediation.MediationException: application=Create_Supervisory - Workday Out transport id=WorkdayOutSoap encountered problem sending to endpoint 'https://wd5-services1.myworkday.com/ccx/service/thermofisher/Human_Resources/25.2' with operation 'Organization_Add_Update'. Details: MSG_SENSITIVE:5c061027-9fb1-43d6-aec5-a42d50b4c335 application=Create_Supervisory - Code: SOAP-ENV:Client.validationError, Reason: Validation error occurred. A superior that is inactive now or will be inactive in future cannot be assigned to an active subordinate organization. Root Cause: BadRequestException : 
+Error code : unknown
+Response :<SOAP-ENV:Envelope xmlns:SOAP-ENV=""http://schemas.xmlsoap.org/soap/envelope/"">
+<SOAP-ENV:Body>
+<SOAP-ENV:Fault xmlns:wd=""urn:com.workday/bsvc"">
+<faultcode>SOAP-ENV:Client.validationError</faultcode>
+<faultstring>Validation error occurred. A superior that is inactive now or will be inactive in future cannot be assigned to an active subordinate organization.</faultstring>
+<detail>
+<wd:Va. See the consolidated report for further details",A superior that is inactive now or will be inactive in future cannot be assigned to an active subordinate organization.
+INT420 - Create Supervisory Org - SI - B,Joydeepta Kar,Failed,"Integration Failed. com.capeclear.mediation.MediationException: application=Create_Supervisory - Workday Out transport id=WorkdayOutSoap0 encountered problem sending to endpoint 'https://wd5-services1.myworkday.com/ccx/service/thermofisher/Staffing/42.0' with operation 'Assign_Roles_Request'. Details: MSG_SENSITIVE:7b339e48-091a-4a9e-a730-6303e6459565 application=Create_Supervisory - Code: SOAP-ENV:Client.validationError, Reason: Validation error occurred. Invalid ID value.  'null' is not a valid ID value for type = 'Position_ID' Root Cause: BadRequestException : ","Reason: Validation error occurred. Invalid ID value. 'null' is not a valid ID value for type = 'Position_ID'. 
+The Int is triggered from BP: Change Job where we are checking the Calculated field: CF – Proposed Position ID for Position ID field.
+"
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,<wd:Message>Invalid ID value.  'null' is not a valid ID value. See the consolidated report for further details,Validation error occurred. Unable to find the current organization or current primary position for this worker as of the effective date.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Terminate contract failed for: 00468828 Okemena Ozomaro
+Validation error occurred. The worker cannot be terminated because there are future approved staffing actions for this worker.",The worker cannot be terminated because there are future approved staffing actions for this worker.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Update Change Job for Transfer CWR failed for: 00402493 Cynthia Cruz
+Validation error occurred. Proposed supervisory organization (Supervisory (Michelle Waddington (00151592) (Inherited)) (inactive)) is not valid. It will be made inactive as of 01/26/2024. This will result in this position not having a supervisory organization.",Proposed supervisory organization is not valid.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Extend End Contract Date  failed for: 00434449 Gayle Forte
+Validation error occurred. Worker is terminated and does not have a future hire.",Worker is terminated and does not have a future hire.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Rehire failed for: 00233976 Dasia Wright
+Validation error occurred. The applicant Dasia Wright is not available to be contracted. Verify the hire eligibility for the applicant.",Verify the hire eligibility for the applicant.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Rescind End Contract BP  failed for: 00465607 Margarita Vargas
+Validation error occurred. Validation message from UI: This process is not rescindable because of the following related processes or the previous position the worker occupied is no longer available or the previous supervisory organization is not active.  If no processes are listed below, the process may have a re-organization or a Move Worker process after this process.  Perform another re-organization or Move Worker transaction to move the worker to the ""Current"" organization for this process using an effective date equal to the re-organization date or the Move Worker date. If a Management Assignment transaction is shown, check that the positions that were moved to the new org may have later staffing events. Or if you have chosen to use job requisition, you cannot rescind the event if you already have another job requisition that has recruiting start date after the event date. If the job requisition prevents you from rescinding this event, you should rescind the Create Job Requisition Event. The process may not be rescindable because you cannot rescind a process on yourself. If End Period Activity was used as a Subprocess, Period Activity Pay process that you are trying to rescind is not the most recent entry. If you want to rescind this change, you must first rescind the most recent process. (78f3ff69ad131001fecaf27fa8850000)",This process is not rescindable because of the following related processes or the previous position the worker occupied is no longer available or the previous supervisory organization is not active.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Terminate contract failed for:  Franchesca Celestin
+Validation error occurred. Invalid ID value.  '' is not a valid ID value for type = 'Contingent_Worker_ID'",Invalid ID value.  '' is not a valid ID value for type = 'Contingent_Worker_ID'
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Extend End Contract Date  failed for: 00460920 Dustin Nguyen
+Validation error occurred. The effective date must be equal to or greater than the date the position was last updated 04/01/2024.",The effective date must be equal to or greater than the date the position was last updated
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Get Applicant failed for: 00468166 Maria Mejia
+Validation error occurred. The entered information does not meet the restrictions defined for this field. (Worker_Reference).",The entered information does not meet the restrictions defined for this field. (Worker_Reference).
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Update Change Job for Transfer CWR failed for: 00484872 Miriam Gonzales
+Validation error occurred. Invalid ID value.  '' is not a valid ID value for type = 'Position_ID'",Invalid ID value.  '' is not a valid ID value for type = 'Position_ID'
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Extend End Contract Date  failed for: 00470366 Carlos Chan
+Validation error occurred. Contingent Worker Type is required if the worker is a contingent worker.",Contingent Worker Type is required if the worker is a contingent worker.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"context.errorMessage
+ Caused by: Validation error occurred. Invalid ID value.  '00484576' is not a valid ID value for type = 'Employee_ID'",Invalid ID value. Is not a valid ID value for type = 'Employee_ID'
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Correct Contract start date failed for: 00457395 Dywon Byrd
+Validation error occurred. At least one business process conflicts with the proposed contract start date. View these conflicts using the View Hire or Contract Start Date Correction Conflicts related action from the contract business process.",At least one business process conflicts with the proposed contract start date.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Correct Contract start date failed for: 00461057 Kenny Colon Escribano
+Validation error occurred. Enter an Effective Date that is on or before 04/19/2023, the date of the position's next update.",Enter an Effective Date that is on or before the date of the position's next update.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Extend End Contract Date  failed for: 00478099 Steven Sellers
+Validation error occurred. Position must be submitted.  If you submitted only a Worker reference, then this worker has more than one position you have access to. If you submitted a Position Management Position ID, and more than one worker is filling that position (it has been overlapped) - please submit the worker reference as well so we can identify which worker to process.",Position must be submitted.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Rehire failed for: 00224303 Janelle Scruggs
+Validation error occurred. The applicant Janelle Scruggs has already been hired.",The applicant has already been hired.
+INT453 - Beeline - CWInfo - SI - I,Pujitha Paladugu,Error,"Update Change Job for Transfer CWR failed for: 00480909 Chantal Joseph
+Validation error occurred. The current position has a pending organization change or a completed Supervisory Organization change effective after this date. Therefore, this position cannot have changes as of the effective date.","The current position has a pending organization change or a completed Supervisory Organization change effective after this date. Therefore, this position cannot have changes as of the effective date."
