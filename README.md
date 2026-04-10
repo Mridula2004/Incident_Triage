@@ -241,26 +241,6 @@ Flag unusual patterns
 
 ---
 
-## Parser Error Handling
-
-Example:
-
-Input:
-
-```
-Unexpected character '---' (code 32) (missing name?)
-```
-
-Output:
-
-```
-Invalid value '---' in the Company Ref ID.
-```
-
----
-
-## Configuration
-
 ### Similarity Threshold
 
 ```python
@@ -269,23 +249,6 @@ similarity_alert_threshold = 0.35
 
 * Below threshold → fallback logic
 * Above threshold → retrieval result
-
----
-
-## Limitations
-
-* Small dataset reduces anomaly accuracy
-* Rule-based classification depends on keywords
-* Retrieval may fail for completely new domains
-
----
-
-## Future Improvements
-
-* Use embeddings instead of TF-IDF
-* Train classification model
-* Add LLM-based explanation refinement
-* Expand training dataset
 
 ---
 
