@@ -1,7 +1,5 @@
 # Incident_Triage
 
-# Root Cause Prediction API
-
 ## Overview
 
 This project provides a **root cause prediction and incident classification system** for integration error messages using a lightweight **hybrid retrieval approach**.
